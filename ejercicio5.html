@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculadora de Descuento de Coches</title>
+    <script src="ejercicio5.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .resultado {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Selecciona un coche para calcular el descuento</h1>
+    <form id="formCoche">
+        <label for="coche">Coche:</label>
+        <select id="coche" name="coche">
+            <option value="FORD FIESTA">Ford Fiesta</option>
+            <option value="FORD FOCUS">Ford Focus</option>
+            <option value="FORD ESCAPE">Ford Escape</option>
+        </select>
+        <br><br>
+        <button type="button" onclick="calcularDescuento()">Calcular Descuento</button>
+    </form>
+    <script>
+        function calcularDescuento() {
+            var coche = document.getElementById("coche").value;
+            var descuento = 0;
+
+            if (coche === "FORD FIESTA") {
+                descuento = 10;
+            } else if (coche === "FORD FOCUS") {
+                descuento = 15;
+            } else if (coche === "FORD ESCAPE") {
+                descuento = 20;
+            }
+
+            var resultadoElement = document.getElementById("resultado");
+            resultadoElement.innerHTML = "El descuento para el coche " + coche + " es del " + descuento + "%.";
+        }
+    </script>
+    <div class="resultado" id="resultado"></div>
+
+</body>
+</html>
+
+
